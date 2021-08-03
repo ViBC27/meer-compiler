@@ -1,0 +1,47 @@
+// Variable
+var name: string;
+
+// Functions
+def name(params)
+end
+
+// Init
+def init(args: string[])
+end
+
+// Example Program
+
+def init(args: string[]): 
+    var name: string = 'Hello World';
+    var ages: int[2] = [20, 30];
+    var age: int = [];
+
+    // Error
+    def test(param: string)
+    end 
+
+    return;
+end
+
+// Type Definitions
+
+void
+type[length] // Array
+boolean: [true, false]
+char: [(a-z)(A-Z)(0-9)]
+string: [(a-z)(A-Z)(0-9)]
+int: [(1-9)(0-9)] (32 bits)
+float: [(0-9).(0.9)] (64 bits)
+ 
+// Type Operations
+int: +,-,*,/, +(unário), -(unário)
+float: +,-,*,/, +(unário), -(unário)
+char: +(concatenação): string
+string: +(concatenação)
+
+// Coerções Explícitas
+Int()
+Char()
+Float()
+String()
+Boolean()
