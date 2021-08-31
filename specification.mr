@@ -2,30 +2,39 @@
 var name: string;
 
 // Functions
-def name(params)
+def name(params): type
 end
 
-// Init
-def init(args: string[])
-end
+// Passagem por Valor-Cópia
+int
+char
+float
+boolean
 
-// Example Program
+// Passagem por Referência
+type[]
+string
 
-def init(args: string[]): 
-    var name: string = 'Hello World';
-    var ages: int[2] = [20, 30];
-    var age: int = [];
+// Conditional Structures
+if (logic expression) then
+    if (logic expression) then
+    end if
+else if then
+else then
+end if
 
-    // Error
-    def test(param: string)
-    end 
 
-    return;
-end
+// Loop Structures (Pre-test)
+while(logic expression)
+end while
+
+// var i: int = 0 -> Implicit
+for(var i = 0; i <= arrayLength; var l)
+end for
+
 
 // Type Definitions
-
-void
+void (Function Only)
 type[length] // Array
 boolean: [true, false]
 char: [(a-z)(A-Z)(0-9)]
@@ -40,8 +49,37 @@ char: +(concatenação): string
 string: +(concatenação)
 
 // Coerções Explícitas
-Int()
-Char()
-Float()
-String()
-Boolean()
+Int([float, (false -> 0, true -> 1), string, char])
+Float([int, (false -> 0.0, true -> 1.0), string, char])
+String([char, int, float, (boolean) => true])
+Boolean([(0 -> false, != 0 -> true), (0.0 -> false, != 0.0 -> true), string '' -> false, char -> true]);
+
+// Coerções Implícitas
+[(int | float | boolean | char | string)(string | char)] = string;
+[(int + float)] = float;
+[(int + boolean)] = int;
+[(float + boolean)] = float;
+
+// Entrada e Saída
+input(var a, var b, var c);
+input ('(%s), var string);
+
+print('abc', 10, 20, true, 'false');
+print('%d %d, %f\n', var a, var b, var c);
+
+// Example Program
+// Init
+def init(args: string[])
+end
+
+def init(args: string[]): int
+    var name: string = 'Hello World';
+    var ages: int[2] = [20, 30];
+    var age: int = 27;
+
+    // Error
+    def test(param: string)
+    end 
+
+    return 0;
+end
