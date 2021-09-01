@@ -1,28 +1,13 @@
 import re
-import sys
-import data
+from token import Token, regexes, TokenCategory
 
-rules = data.rules
+class Tokenizer:
 
-class Token:
-  def __init__(self, line, column, value, category):
-    self.line = line
-    self.column = column
-    self.value = value
-    self.category = category
-
-  def __str__(self):
-    return ( "              [%04d, %04d] (TODO, %20s) {%s}" % 
-    (self.line, self.column, self.category, self.value) )
-
-
-class Tokenize:
-
-  def __init__(self, file, rules):
+  def __init__(self, file_name):
     self.line = 0
-    self.file = file
-    self.regex = re.compile('|'.join(['(?P<%sA%d>%s)' % (type, idx, regex)
-                             for idx, (type, regex) in enumerate(rules)]))
+    self.file = open(file_name, 'r')
+    self.regex = re.compile('|'.join(['(?P<%s>%s)' % (type, regex)
+                             for (type, regex) in regexes]))
     self.token = self.tokenGenerator()
 
   def tokenGenerator(self):
@@ -31,32 +16,31 @@ class Tokenize:
 
       position = 0
 
+      print("%4d  %s" % (self.line, linecontent.rstrip()))
+
       while position < len(linecontent):
         if linecontent[position] == ' ' or linecontent[position] == '\n':
-            position = position + 1
-            continue
+          position = position + 1
+          continue
+
         temp_match = self.regex.match(linecontent, position)
+
         if temp_match is None:
-            print("erro lexico")
-            break
+          yield Token(self.line, position, linecontent[position], 'UNDEFINED')
+          position = position + 1
+          continue
 
         group_name = temp_match.lastgroup
-        token = Token(self.line, position, temp_match.group(group_name), group_name.split('A')[0])
+        token = Token(self.line, position, temp_match.group(group_name), group_name)
         position = temp_match.end()
+        
         yield token
 
       self.line = self.line + 1
 
+    yield Token(self.line, position, 'EOF', 'EOF')
+    self.file.close()
+
   def nextToken(self):
     return self.token.__next__()
 
-print(sys.argv)
-
-file = open('input.txt', 'r')
-
-instance = Tokenize(file, rules)
-
-print(instance.nextToken())
-print(instance.nextToken())
-
-file.close()
