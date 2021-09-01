@@ -36,27 +36,78 @@ class TokenCategory(Enum):
   CONSTLFLOAT = auto()
   CONSTLCHAR = auto()
   PRINT = auto()
+  INPUT = auto()
   FCINIT = auto()
+  CONDIF = auto()
+  CONDTHEN = auto()
+  CONDELSEIF = auto()
+  CONDELSE = auto()
+  CONDENDIF = auto()
+  CASTINGINT = auto()
+  CASTINGFLOAT = auto()
+  CASTINGSTRING = auto()
+  CASTINGBOOLEAN = auto()
+  LOOPFOR = auto()
+  LOOPENDFOR = auto()
+  LOOPWHILE = auto()
+  LOOPENDWHILE = auto()
+  VAR = auto()
   EOF = auto()
   UNDEFINED = auto()
 
 
 regexes = [
-  ('FCDEF', 'def'),
-  ('FCINIT', 'init'),
-  ('FCTYPEVOID', 'void'),
+  ('VAR', 'var'),
+  ('TYPEBOOL', 'boolean'),
+  ('TYPECHAR', 'char'),
+  ('TYPEINT', 'int'),
+  ('TYPEFLOAT', 'float'),
+  ('TYPESTRING', 'string'),
+  ('OPASUM', '\+'),
+  ('OPAMINUS', '\-'),
+  ('OPADIV', '\/'),
+  ('OPAMULT', '\*'),
+  ('OPRLESS', '<'),
+  ('OPRGREAT', '>'),
+  ('OPREQL', '=='),
+  ('OPRLESSEQL', '<='),
+  ('OPRGREATEQL', '>='),
+  ('OPRNOTEQL', '!='),
+  ('SEPARATOR', '\,'),
+  ('ASSIGN', '='),
   ('PRINT', 'print'),
+  ('INPUT', 'input'),
+  ('CONDIF', 'if'),
+  ('CONDTHEN', 'then'),
+  ('CONDELSEIF', 'elseif'),
+  ('CONDELSE', 'else'),
+  ('CONDENDIF', 'endif'),
+  ('CASTINGINT', 'Int'),
+  ('CASTINGFLOAT', 'Float'),
+  ('CASTINGSTRING', 'String'),
+  ('CASTINGBOOLEAN', 'Boolean'),
+  ('LOOPFOR', 'for'),
+  ('LOOPENDFOR', 'endfor'),
+  ('LOOPWHILE', 'while'),
+  ('LOOPENDWHILE', 'endwhile'),
+  ('FCINIT', 'init'),
+  ('FCRETURN', 'return'),
+  ('FCDEF', 'def'),
+  ('FCTYPEVOID', 'void'),
   ('FCBEGIN', 'begin'),
   ('FCEND', 'end'),
-  ('TYPESTRING', 'string'),
   ('PARAMSBEGIN', '\('),
   ('PARAMSEND', '\)'),
   ('TYPEASSIGN', '\:'),
   ('ARRAYBEGIN', '\['),
   ('ARRAYEND', '\]'),
   ('LINEEND', '\;'),
-  ('ID', '[a-zA-Z][a-zA-Z0-9\_]*'),
   ('CONSTLSTRING', '"([\w\W]*)"'),
+  ('CONSTLBOOL', 'True|False'),
+  ('CONSTLFLOAT', '([0-9]+)\.([0-9]+)'),
+  ('CONSTLINT', '[0-9]+'),
+  ('CONSTLCHAR', '\'([\w\W])\''),
+  ('ID', '[a-zA-Z][a-zA-Z0-9\_]*'),
 ]
 
 class Token:
