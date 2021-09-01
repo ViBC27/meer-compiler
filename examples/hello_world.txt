@@ -1,0 +1,4 @@
+def init(args: string[]): void
+begin
+  print("Hello World");
+end
