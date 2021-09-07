@@ -16,7 +16,7 @@ class Tokenizer:
 
       position = 0
 
-      print("%4d  %s" % (self.line, linecontent.rstrip()))
+      print("%4d  %s" % (self.line, linecontent.strip()))
 
       while position < len(linecontent):
         if linecontent[position] == ' ' or linecontent[position] == '\n':
