@@ -14,7 +14,7 @@ class Tokenizer:
 
       column = 0
 
-      print("%4d  %s" % (self.line, linecontent.rstrip()))
+      print("%4d  %s" % (self.line, linecontent.strip()))
 
       while column < len(linecontent):
         if linecontent[column] == ' ' or linecontent[column] == '\n':
