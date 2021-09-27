@@ -1,0 +1,23 @@
+   0  def init(args: string[]): void
+              [0000, 0000] (0023,                FCDEF) {def}
+              [0000, 0004] (0037,               FCINIT) {init}
+              [0000, 0008] (0019,          PARAMSBEGIN) {(}
+              [0000, 0009] (0001,                   ID) {args}
+              [0000, 0013] (0028,           TYPEASSIGN) {:}
+              [0000, 0015] (0004,           TYPESTRING) {string}
+              [0000, 0021] (0017,           ARRAYBEGIN) {[}
+              [0000, 0022] (0018,             ARRAYEND) {]}
+              [0000, 0023] (0020,            PARAMSEND) {)}
+              [0000, 0024] (0028,           TYPEASSIGN) {:}
+              [0000, 0026] (0029,           FCTYPEVOID) {void}
+   1  begin
+              [0001, 0000] (0021,              FCBEGIN) {begin}
+   2  print("Hello World");
+              [0002, 0002] (0035,                PRINT) {print}
+              [0002, 0007] (0019,          PARAMSBEGIN) {(}
+              [0002, 0008] (0031,         CONSTLSTRING) {"Hello World"}
+              [0002, 0021] (0020,            PARAMSEND) {)}
+              [0002, 0022] (0025,              LINEEND) {;}
+   3  end
+              [0003, 0000] (0022,                FCEND) {end}
+              [0004, 0003] (0052,                  EOF) {EOF}
