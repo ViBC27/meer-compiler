@@ -103,7 +103,7 @@ regexes = [
   ('ARRAYEND', '\]'),
   ('LINEEND', '\;'),
   ('CONSTLSTRING', '"([\w\W]*)"'),
-  ('CONSTLBOOL', 'True|False'),
+  ('CONSTLBOOL', 'true|false'),
   ('CONSTLFLOAT', '([0-9]+)\.([0-9]+)'),
   ('CONSTLINT', '[0-9]+'),
   ('CONSTLCHAR', '\'([\w\W])\''),
@@ -113,8 +113,8 @@ regexes = [
 class Token:
   def __init__(self, line, column, value, category):
     self.line = line
-    self.column = column
     self.value = value
+    self.column = column
     self.category = category
 
   def __str__(self):

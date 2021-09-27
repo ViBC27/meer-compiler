@@ -29,7 +29,7 @@ while(logic expression)
 end while
 
 // var i: int = 0 -> Implicit
-for(var i = 0; i <= arrayLength; var l)
+for(var i = 0; i iterationNumber; var l)
 end for
 
 
