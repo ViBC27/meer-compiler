@@ -21,8 +21,8 @@ class TokenCategory(Enum):
   ARRAYEND = auto()
   PARAMSBEGIN = auto()
   PARAMSEND = auto()
-  FCBEGIN = auto()
-  FCEND = auto()
+  BLOCKBEGIN = auto()
+  BLOCKEND = auto()
   FCDEF = auto()
   FCRETURN = auto()
   LINEEND = auto()
@@ -37,21 +37,20 @@ class TokenCategory(Enum):
   CONSTLCHAR = auto()
   PRINT = auto()
   INPUT = auto()
-  FCINIT = auto()
   CONDIF = auto()
-  CONDTHEN = auto()
   CONDELSEIF = auto()
   CONDELSE = auto()
-  CONDENDIF = auto()
   CASTINGINT = auto()
   CASTINGFLOAT = auto()
   CASTINGSTRING = auto()
   CASTINGBOOLEAN = auto()
+  CASTINGCHAR = auto()
   LOOPFOR = auto()
-  LOOPENDFOR = auto()
   LOOPWHILE = auto()
-  LOOPENDWHILE = auto()
   VAR = auto()
+  OPLAND = auto()
+  OPLOR = auto()
+  OPLNOT = auto()
   EOF = auto()
   UNDEFINED = auto()
 
@@ -63,6 +62,9 @@ regexes = [
   ('TYPEINT', 'int'),
   ('TYPEFLOAT', 'float'),
   ('TYPESTRING', 'string'),
+  ('OPLAND', 'and'),
+  ('OPLOR', 'or'),
+  ('OPLNOT', 'not'),
   ('OPASUM', '\+'),
   ('OPAMINUS', '\-'),
   ('OPADIV', '\/'),
@@ -78,24 +80,20 @@ regexes = [
   ('PRINT', 'print'),
   ('INPUT', 'input'),
   ('CONDIF', 'if'),
-  ('CONDTHEN', 'then'),
   ('CONDELSEIF', 'elseif'),
   ('CONDELSE', 'else'),
-  ('CONDENDIF', 'endif'),
   ('CASTINGINT', 'Int'),
   ('CASTINGFLOAT', 'Float'),
   ('CASTINGSTRING', 'String'),
   ('CASTINGBOOLEAN', 'Boolean'),
+  ('CASTINGCHAR', 'Char'),
   ('LOOPFOR', 'for'),
-  ('LOOPENDFOR', 'endfor'),
   ('LOOPWHILE', 'while'),
-  ('LOOPENDWHILE', 'endwhile'),
-  ('FCINIT', 'init'),
   ('FCRETURN', 'return'),
   ('FCDEF', 'def'),
   ('FCTYPEVOID', 'void'),
-  ('FCBEGIN', 'begin'),
-  ('FCEND', 'end'),
+  ('BLOCKBEGIN', 'begin'),
+  ('BLOCKEND', 'end'),
   ('PARAMSBEGIN', '\('),
   ('PARAMSEND', '\)'),
   ('TYPEASSIGN', '\:'),

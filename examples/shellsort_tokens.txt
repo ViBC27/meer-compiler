@@ -1,265 +1,272 @@
-   0  def shellsort(var list: int[], var size: int): void
+   0  def shellsort(var list: int[], var size: int): int[]
               [0000, 0000] (0023,                FCDEF) {def}
               [0000, 0004] (0001,                   ID) {shellsort}
               [0000, 0013] (0019,          PARAMSBEGIN) {(}
-              [0000, 0014] (0051,                  VAR) {var}
+              [0000, 0014] (0047,                  VAR) {var}
               [0000, 0018] (0001,                   ID) {list}
               [0000, 0022] (0028,           TYPEASSIGN) {:}
               [0000, 0024] (0005,              TYPEINT) {int}
               [0000, 0027] (0017,           ARRAYBEGIN) {[}
               [0000, 0028] (0018,             ARRAYEND) {]}
               [0000, 0029] (0026,            SEPARATOR) {,}
-              [0000, 0031] (0051,                  VAR) {var}
+              [0000, 0031] (0047,                  VAR) {var}
               [0000, 0035] (0001,                   ID) {size}
               [0000, 0039] (0028,           TYPEASSIGN) {:}
               [0000, 0041] (0005,              TYPEINT) {int}
               [0000, 0044] (0020,            PARAMSEND) {)}
               [0000, 0045] (0028,           TYPEASSIGN) {:}
-              [0000, 0047] (0029,           FCTYPEVOID) {void}
+              [0000, 0047] (0005,              TYPEINT) {int}
+              [0000, 0050] (0017,           ARRAYBEGIN) {[}
+              [0000, 0051] (0018,             ARRAYEND) {]}
    1  begin
-              [0001, 0000] (0021,              FCBEGIN) {begin}
-   2  
-   3  var gap: int = Int(size / 2);
-              [0003, 0002] (0051,                  VAR) {var}
-              [0003, 0006] (0001,                   ID) {gap}
-              [0003, 0009] (0028,           TYPEASSIGN) {:}
-              [0003, 0011] (0005,              TYPEINT) {int}
-              [0003, 0015] (0027,               ASSIGN) {=}
-              [0003, 0017] (0043,           CASTINGINT) {Int}
-              [0003, 0020] (0019,          PARAMSBEGIN) {(}
-              [0003, 0021] (0001,                   ID) {size}
-              [0003, 0026] (0009,               OPADIV) {/}
-              [0003, 0028] (0030,            CONSTLINT) {2}
-              [0003, 0029] (0020,            PARAMSEND) {)}
-              [0003, 0030] (0025,              LINEEND) {;}
-   4  
-   5  while(gap > 0)
-              [0005, 0002] (0049,            LOOPWHILE) {while}
+              [0001, 0000] (0021,           BLOCKBEGIN) {begin}
+   2  var gap: int = Int(size / 2);
+              [0002, 0002] (0047,                  VAR) {var}
+              [0002, 0006] (0001,                   ID) {gap}
+              [0002, 0009] (0028,           TYPEASSIGN) {:}
+              [0002, 0011] (0005,              TYPEINT) {int}
+              [0002, 0015] (0027,               ASSIGN) {=}
+              [0002, 0017] (0040,           CASTINGINT) {Int}
+              [0002, 0020] (0019,          PARAMSBEGIN) {(}
+              [0002, 0021] (0001,                   ID) {size}
+              [0002, 0026] (0009,               OPADIV) {/}
+              [0002, 0028] (0030,            CONSTLINT) {2}
+              [0002, 0029] (0020,            PARAMSEND) {)}
+              [0002, 0030] (0025,              LINEEND) {;}
+   3  while(gap > 0)
+              [0003, 0002] (0046,            LOOPWHILE) {while}
+              [0003, 0007] (0019,          PARAMSBEGIN) {(}
+              [0003, 0008] (0001,                   ID) {gap}
+              [0003, 0012] (0012,             OPRGREAT) {>}
+              [0003, 0014] (0030,            CONSTLINT) {0}
+              [0003, 0015] (0020,            PARAMSEND) {)}
+   4  begin
+              [0004, 0002] (0021,           BLOCKBEGIN) {begin}
+   5  for(var i = gap, size)
+              [0005, 0004] (0045,              LOOPFOR) {for}
               [0005, 0007] (0019,          PARAMSBEGIN) {(}
-              [0005, 0008] (0001,                   ID) {gap}
-              [0005, 0012] (0012,             OPRGREAT) {>}
-              [0005, 0014] (0030,            CONSTLINT) {0}
-              [0005, 0015] (0020,            PARAMSEND) {)}
-   6  
-   7  for(var i = gap, size)
-              [0007, 0004] (0047,              LOOPFOR) {for}
-              [0007, 0007] (0019,          PARAMSBEGIN) {(}
-              [0007, 0008] (0051,                  VAR) {var}
-              [0007, 0012] (0001,                   ID) {i}
-              [0007, 0014] (0027,               ASSIGN) {=}
-              [0007, 0016] (0001,                   ID) {gap}
-              [0007, 0019] (0026,            SEPARATOR) {,}
-              [0007, 0021] (0001,                   ID) {size}
-              [0007, 0025] (0020,            PARAMSEND) {)}
-   8  
-   9  var temp: int = list[i];
-              [0009, 0006] (0051,                  VAR) {var}
-              [0009, 0010] (0001,                   ID) {temp}
-              [0009, 0014] (0028,           TYPEASSIGN) {:}
-              [0009, 0016] (0005,              TYPEINT) {int}
-              [0009, 0020] (0027,               ASSIGN) {=}
-              [0009, 0022] (0001,                   ID) {list}
-              [0009, 0026] (0017,           ARRAYBEGIN) {[}
-              [0009, 0027] (0001,                   ID) {i}
-              [0009, 0028] (0018,             ARRAYEND) {]}
-              [0009, 0029] (0025,              LINEEND) {;}
-  10  var j: int = i;
-              [0010, 0006] (0051,                  VAR) {var}
-              [0010, 0010] (0001,                   ID) {j}
-              [0010, 0011] (0028,           TYPEASSIGN) {:}
-              [0010, 0013] (0005,              TYPEINT) {int}
-              [0010, 0017] (0027,               ASSIGN) {=}
-              [0010, 0019] (0001,                   ID) {i}
-              [0010, 0020] (0025,              LINEEND) {;}
-  11  
-  12  while(j >= gap and list[j-gap] > temp)
-              [0012, 0006] (0049,            LOOPWHILE) {while}
-              [0012, 0011] (0019,          PARAMSBEGIN) {(}
+              [0005, 0008] (0047,                  VAR) {var}
+              [0005, 0012] (0001,                   ID) {i}
+              [0005, 0014] (0027,               ASSIGN) {=}
+              [0005, 0016] (0001,                   ID) {gap}
+              [0005, 0019] (0026,            SEPARATOR) {,}
+              [0005, 0021] (0001,                   ID) {size}
+              [0005, 0025] (0020,            PARAMSEND) {)}
+   6  begin
+              [0006, 0004] (0021,           BLOCKBEGIN) {begin}
+   7  var temp: int = list[i];
+              [0007, 0006] (0047,                  VAR) {var}
+              [0007, 0010] (0001,                   ID) {temp}
+              [0007, 0014] (0028,           TYPEASSIGN) {:}
+              [0007, 0016] (0005,              TYPEINT) {int}
+              [0007, 0020] (0027,               ASSIGN) {=}
+              [0007, 0022] (0001,                   ID) {list}
+              [0007, 0026] (0017,           ARRAYBEGIN) {[}
+              [0007, 0027] (0001,                   ID) {i}
+              [0007, 0028] (0018,             ARRAYEND) {]}
+              [0007, 0029] (0025,              LINEEND) {;}
+   8  var j: int = i;
+              [0008, 0006] (0047,                  VAR) {var}
+              [0008, 0010] (0001,                   ID) {j}
+              [0008, 0011] (0028,           TYPEASSIGN) {:}
+              [0008, 0013] (0005,              TYPEINT) {int}
+              [0008, 0017] (0027,               ASSIGN) {=}
+              [0008, 0019] (0001,                   ID) {i}
+              [0008, 0020] (0025,              LINEEND) {;}
+   9  while(j >= gap and list[j-gap] > temp)
+              [0009, 0006] (0046,            LOOPWHILE) {while}
+              [0009, 0011] (0019,          PARAMSBEGIN) {(}
+              [0009, 0012] (0001,                   ID) {j}
+              [0009, 0014] (0012,             OPRGREAT) {>}
+              [0009, 0015] (0027,               ASSIGN) {=}
+              [0009, 0017] (0001,                   ID) {gap}
+              [0009, 0021] (0048,               OPLAND) {and}
+              [0009, 0025] (0001,                   ID) {list}
+              [0009, 0029] (0017,           ARRAYBEGIN) {[}
+              [0009, 0030] (0001,                   ID) {j}
+              [0009, 0031] (0008,             OPAMINUS) {-}
+              [0009, 0032] (0001,                   ID) {gap}
+              [0009, 0035] (0018,             ARRAYEND) {]}
+              [0009, 0037] (0012,             OPRGREAT) {>}
+              [0009, 0039] (0001,                   ID) {temp}
+              [0009, 0043] (0020,            PARAMSEND) {)}
+  10  begin
+              [0010, 0006] (0021,           BLOCKBEGIN) {begin}
+  11  list[j] = list[j-gap];
+              [0011, 0008] (0001,                   ID) {list}
+              [0011, 0012] (0017,           ARRAYBEGIN) {[}
+              [0011, 0013] (0001,                   ID) {j}
+              [0011, 0014] (0018,             ARRAYEND) {]}
+              [0011, 0016] (0027,               ASSIGN) {=}
+              [0011, 0018] (0001,                   ID) {list}
+              [0011, 0022] (0017,           ARRAYBEGIN) {[}
+              [0011, 0023] (0001,                   ID) {j}
+              [0011, 0024] (0008,             OPAMINUS) {-}
+              [0011, 0025] (0001,                   ID) {gap}
+              [0011, 0028] (0018,             ARRAYEND) {]}
+              [0011, 0029] (0025,              LINEEND) {;}
+  12  j = j - gap;
+              [0012, 0008] (0001,                   ID) {j}
+              [0012, 0010] (0027,               ASSIGN) {=}
               [0012, 0012] (0001,                   ID) {j}
-              [0012, 0014] (0012,             OPRGREAT) {>}
-              [0012, 0015] (0027,               ASSIGN) {=}
-              [0012, 0017] (0001,                   ID) {gap}
-              [0012, 0021] (0001,                   ID) {and}
-              [0012, 0025] (0001,                   ID) {list}
-              [0012, 0029] (0017,           ARRAYBEGIN) {[}
-              [0012, 0030] (0001,                   ID) {j}
-              [0012, 0031] (0008,             OPAMINUS) {-}
-              [0012, 0032] (0001,                   ID) {gap}
-              [0012, 0035] (0018,             ARRAYEND) {]}
-              [0012, 0037] (0012,             OPRGREAT) {>}
-              [0012, 0039] (0001,                   ID) {temp}
-              [0012, 0043] (0020,            PARAMSEND) {)}
-  13  list[j] = list[j-gap];
-              [0013, 0008] (0001,                   ID) {list}
-              [0013, 0012] (0017,           ARRAYBEGIN) {[}
-              [0013, 0013] (0001,                   ID) {j}
-              [0013, 0014] (0018,             ARRAYEND) {]}
-              [0013, 0016] (0027,               ASSIGN) {=}
-              [0013, 0018] (0001,                   ID) {list}
-              [0013, 0022] (0017,           ARRAYBEGIN) {[}
-              [0013, 0023] (0001,                   ID) {j}
-              [0013, 0024] (0008,             OPAMINUS) {-}
-              [0013, 0025] (0001,                   ID) {gap}
-              [0013, 0028] (0018,             ARRAYEND) {]}
-              [0013, 0029] (0025,              LINEEND) {;}
-  14  j = j - gap;
-              [0014, 0008] (0001,                   ID) {j}
-              [0014, 0010] (0027,               ASSIGN) {=}
-              [0014, 0012] (0001,                   ID) {j}
-              [0014, 0014] (0008,             OPAMINUS) {-}
-              [0014, 0016] (0001,                   ID) {gap}
-              [0014, 0019] (0025,              LINEEND) {;}
-  15  endwhile
-              [0015, 0006] (0050,         LOOPENDWHILE) {endwhile}
-  16  
-  17  list[j] = temp;
-              [0017, 0006] (0001,                   ID) {list}
-              [0017, 0010] (0017,           ARRAYBEGIN) {[}
-              [0017, 0011] (0001,                   ID) {j}
-              [0017, 0012] (0018,             ARRAYEND) {]}
-              [0017, 0014] (0027,               ASSIGN) {=}
-              [0017, 0016] (0001,                   ID) {temp}
-              [0017, 0020] (0025,              LINEEND) {;}
-  18  
-  19  endfor
-              [0019, 0004] (0048,           LOOPENDFOR) {endfor}
+              [0012, 0014] (0008,             OPAMINUS) {-}
+              [0012, 0016] (0001,                   ID) {gap}
+              [0012, 0019] (0025,              LINEEND) {;}
+  13  end
+              [0013, 0006] (0022,             BLOCKEND) {end}
+  14  list[j] = temp;
+              [0014, 0006] (0001,                   ID) {list}
+              [0014, 0010] (0017,           ARRAYBEGIN) {[}
+              [0014, 0011] (0001,                   ID) {j}
+              [0014, 0012] (0018,             ARRAYEND) {]}
+              [0014, 0014] (0027,               ASSIGN) {=}
+              [0014, 0016] (0001,                   ID) {temp}
+              [0014, 0020] (0025,              LINEEND) {;}
+  15  end
+              [0015, 0004] (0022,             BLOCKEND) {end}
+  16  gap = Int(gap / 2);
+              [0016, 0004] (0001,                   ID) {gap}
+              [0016, 0008] (0027,               ASSIGN) {=}
+              [0016, 0010] (0040,           CASTINGINT) {Int}
+              [0016, 0013] (0019,          PARAMSBEGIN) {(}
+              [0016, 0014] (0001,                   ID) {gap}
+              [0016, 0018] (0009,               OPADIV) {/}
+              [0016, 0020] (0030,            CONSTLINT) {2}
+              [0016, 0021] (0020,            PARAMSEND) {)}
+              [0016, 0022] (0025,              LINEEND) {;}
+  17  end
+              [0017, 0002] (0022,             BLOCKEND) {end}
+  18  return list;
+              [0018, 0002] (0024,             FCRETURN) {return}
+              [0018, 0009] (0001,                   ID) {list}
+              [0018, 0013] (0025,              LINEEND) {;}
+  19  end
+              [0019, 0000] (0022,             BLOCKEND) {end}
   20  
-  21  gap = Int(gap / 2);
-              [0021, 0004] (0001,                   ID) {gap}
-              [0021, 0008] (0027,               ASSIGN) {=}
-              [0021, 0010] (0043,           CASTINGINT) {Int}
-              [0021, 0013] (0019,          PARAMSBEGIN) {(}
-              [0021, 0014] (0001,                   ID) {gap}
-              [0021, 0018] (0009,               OPADIV) {/}
-              [0021, 0020] (0030,            CONSTLINT) {2}
-              [0021, 0021] (0020,            PARAMSEND) {)}
-              [0021, 0022] (0025,              LINEEND) {;}
-  22  
-  23  endwhile
-              [0023, 0002] (0050,         LOOPENDWHILE) {endwhile}
-  24  
-  25  end
-              [0025, 0000] (0022,                FCEND) {end}
-  26  
-  27  def init(args: string[]): void
-              [0027, 0000] (0023,                FCDEF) {def}
-              [0027, 0004] (0037,               FCINIT) {init}
-              [0027, 0008] (0019,          PARAMSBEGIN) {(}
-              [0027, 0009] (0001,                   ID) {args}
-              [0027, 0013] (0028,           TYPEASSIGN) {:}
-              [0027, 0015] (0004,           TYPESTRING) {string}
-              [0027, 0021] (0017,           ARRAYBEGIN) {[}
-              [0027, 0022] (0018,             ARRAYEND) {]}
-              [0027, 0023] (0020,            PARAMSEND) {)}
-              [0027, 0024] (0028,           TYPEASSIGN) {:}
-              [0027, 0026] (0029,           FCTYPEVOID) {void}
-  28  begin
-              [0028, 0000] (0021,              FCBEGIN) {begin}
-  29  
-  30  var size: int;
-              [0030, 0002] (0051,                  VAR) {var}
-              [0030, 0006] (0001,                   ID) {size}
-              [0030, 0010] (0028,           TYPEASSIGN) {:}
-              [0030, 0012] (0005,              TYPEINT) {int}
-              [0030, 0015] (0025,              LINEEND) {;}
-  31  input(size);
-              [0031, 0002] (0036,                INPUT) {input}
-              [0031, 0007] (0019,          PARAMSBEGIN) {(}
-              [0031, 0008] (0001,                   ID) {size}
-              [0031, 0012] (0020,            PARAMSEND) {)}
-              [0031, 0013] (0025,              LINEEND) {;}
-  32  var list: int[];
-              [0032, 0002] (0051,                  VAR) {var}
-              [0032, 0006] (0001,                   ID) {list}
-              [0032, 0010] (0028,           TYPEASSIGN) {:}
-              [0032, 0012] (0005,              TYPEINT) {int}
-              [0032, 0015] (0017,           ARRAYBEGIN) {[}
+  21  def init(var args: string[]): int
+              [0021, 0000] (0023,                FCDEF) {def}
+              [0021, 0004] (0001,                   ID) {init}
+              [0021, 0008] (0019,          PARAMSBEGIN) {(}
+              [0021, 0009] (0047,                  VAR) {var}
+              [0021, 0013] (0001,                   ID) {args}
+              [0021, 0017] (0028,           TYPEASSIGN) {:}
+              [0021, 0019] (0004,           TYPESTRING) {string}
+              [0021, 0025] (0017,           ARRAYBEGIN) {[}
+              [0021, 0026] (0018,             ARRAYEND) {]}
+              [0021, 0027] (0020,            PARAMSEND) {)}
+              [0021, 0028] (0028,           TYPEASSIGN) {:}
+              [0021, 0030] (0005,              TYPEINT) {int}
+  22  begin
+              [0022, 0000] (0021,           BLOCKBEGIN) {begin}
+  23  var size: int;
+              [0023, 0002] (0047,                  VAR) {var}
+              [0023, 0006] (0001,                   ID) {size}
+              [0023, 0010] (0028,           TYPEASSIGN) {:}
+              [0023, 0012] (0005,              TYPEINT) {int}
+              [0023, 0015] (0025,              LINEEND) {;}
+  24  input(size);
+              [0024, 0002] (0036,                INPUT) {input}
+              [0024, 0007] (0019,          PARAMSBEGIN) {(}
+              [0024, 0008] (0001,                   ID) {size}
+              [0024, 0012] (0020,            PARAMSEND) {)}
+              [0024, 0013] (0025,              LINEEND) {;}
+  25  var list: int[];
+              [0025, 0002] (0047,                  VAR) {var}
+              [0025, 0006] (0001,                   ID) {list}
+              [0025, 0010] (0028,           TYPEASSIGN) {:}
+              [0025, 0012] (0005,              TYPEINT) {int}
+              [0025, 0015] (0017,           ARRAYBEGIN) {[}
+              [0025, 0016] (0018,             ARRAYEND) {]}
+              [0025, 0017] (0025,              LINEEND) {;}
+  26  for(var i = 0, size, 1)
+              [0026, 0002] (0045,              LOOPFOR) {for}
+              [0026, 0005] (0019,          PARAMSBEGIN) {(}
+              [0026, 0006] (0047,                  VAR) {var}
+              [0026, 0010] (0001,                   ID) {i}
+              [0026, 0012] (0027,               ASSIGN) {=}
+              [0026, 0014] (0030,            CONSTLINT) {0}
+              [0026, 0015] (0026,            SEPARATOR) {,}
+              [0026, 0017] (0001,                   ID) {size}
+              [0026, 0021] (0026,            SEPARATOR) {,}
+              [0026, 0023] (0030,            CONSTLINT) {1}
+              [0026, 0024] (0020,            PARAMSEND) {)}
+  27  begin
+              [0027, 0002] (0021,           BLOCKBEGIN) {begin}
+  28  input(list[i]);
+              [0028, 0004] (0036,                INPUT) {input}
+              [0028, 0009] (0019,          PARAMSBEGIN) {(}
+              [0028, 0010] (0001,                   ID) {list}
+              [0028, 0014] (0017,           ARRAYBEGIN) {[}
+              [0028, 0015] (0001,                   ID) {i}
+              [0028, 0016] (0018,             ARRAYEND) {]}
+              [0028, 0017] (0020,            PARAMSEND) {)}
+              [0028, 0018] (0025,              LINEEND) {;}
+  29  end
+              [0029, 0002] (0022,             BLOCKEND) {end}
+  30  for(var i = 0, size, 1)
+              [0030, 0002] (0045,              LOOPFOR) {for}
+              [0030, 0005] (0019,          PARAMSBEGIN) {(}
+              [0030, 0006] (0047,                  VAR) {var}
+              [0030, 0010] (0001,                   ID) {i}
+              [0030, 0012] (0027,               ASSIGN) {=}
+              [0030, 0014] (0030,            CONSTLINT) {0}
+              [0030, 0015] (0026,            SEPARATOR) {,}
+              [0030, 0017] (0001,                   ID) {size}
+              [0030, 0021] (0026,            SEPARATOR) {,}
+              [0030, 0023] (0030,            CONSTLINT) {1}
+              [0030, 0024] (0020,            PARAMSEND) {)}
+  31  begin
+              [0031, 0002] (0021,           BLOCKBEGIN) {begin}
+  32  print(list[i]);
+              [0032, 0004] (0035,                PRINT) {print}
+              [0032, 0009] (0019,          PARAMSBEGIN) {(}
+              [0032, 0010] (0001,                   ID) {list}
+              [0032, 0014] (0017,           ARRAYBEGIN) {[}
+              [0032, 0015] (0001,                   ID) {i}
               [0032, 0016] (0018,             ARRAYEND) {]}
-              [0032, 0017] (0025,              LINEEND) {;}
-  33  
-  34  for(var i = 0, size, 1)
-              [0034, 0002] (0047,              LOOPFOR) {for}
-              [0034, 0005] (0019,          PARAMSBEGIN) {(}
-              [0034, 0006] (0051,                  VAR) {var}
-              [0034, 0010] (0001,                   ID) {i}
-              [0034, 0012] (0027,               ASSIGN) {=}
-              [0034, 0014] (0030,            CONSTLINT) {0}
-              [0034, 0015] (0026,            SEPARATOR) {,}
-              [0034, 0017] (0001,                   ID) {size}
-              [0034, 0021] (0026,            SEPARATOR) {,}
-              [0034, 0023] (0030,            CONSTLINT) {1}
-              [0034, 0024] (0020,            PARAMSEND) {)}
-  35  input(list[i]);
-              [0035, 0004] (0036,                INPUT) {input}
-              [0035, 0009] (0019,          PARAMSBEGIN) {(}
-              [0035, 0010] (0001,                   ID) {list}
-              [0035, 0014] (0017,           ARRAYBEGIN) {[}
-              [0035, 0015] (0001,                   ID) {i}
-              [0035, 0016] (0018,             ARRAYEND) {]}
-              [0035, 0017] (0020,            PARAMSEND) {)}
-              [0035, 0018] (0025,              LINEEND) {;}
-  36  endfor
-              [0036, 0002] (0048,           LOOPENDFOR) {endfor}
-  37  
-  38  for(var i = 0, size, 1)
-              [0038, 0002] (0047,              LOOPFOR) {for}
-              [0038, 0005] (0019,          PARAMSBEGIN) {(}
-              [0038, 0006] (0051,                  VAR) {var}
-              [0038, 0010] (0001,                   ID) {i}
-              [0038, 0012] (0027,               ASSIGN) {=}
-              [0038, 0014] (0030,            CONSTLINT) {0}
-              [0038, 0015] (0026,            SEPARATOR) {,}
-              [0038, 0017] (0001,                   ID) {size}
-              [0038, 0021] (0026,            SEPARATOR) {,}
-              [0038, 0023] (0030,            CONSTLINT) {1}
-              [0038, 0024] (0020,            PARAMSEND) {)}
-  39  print(list[i]);
-              [0039, 0004] (0035,                PRINT) {print}
-              [0039, 0009] (0019,          PARAMSBEGIN) {(}
-              [0039, 0010] (0001,                   ID) {list}
-              [0039, 0014] (0017,           ARRAYBEGIN) {[}
-              [0039, 0015] (0001,                   ID) {i}
-              [0039, 0016] (0018,             ARRAYEND) {]}
-              [0039, 0017] (0020,            PARAMSEND) {)}
-              [0039, 0018] (0025,              LINEEND) {;}
-  40  endfor
-              [0040, 0002] (0048,           LOOPENDFOR) {endfor}
-  41  
-  42  list = shellsort(list, size);
-              [0042, 0002] (0001,                   ID) {list}
-              [0042, 0007] (0027,               ASSIGN) {=}
-              [0042, 0009] (0001,                   ID) {shellsort}
-              [0042, 0018] (0019,          PARAMSBEGIN) {(}
-              [0042, 0019] (0001,                   ID) {list}
-              [0042, 0023] (0026,            SEPARATOR) {,}
-              [0042, 0025] (0001,                   ID) {size}
-              [0042, 0029] (0020,            PARAMSEND) {)}
-              [0042, 0030] (0025,              LINEEND) {;}
-  43  
-  44  for(var i = 0, size, 1)
-              [0044, 0002] (0047,              LOOPFOR) {for}
-              [0044, 0005] (0019,          PARAMSBEGIN) {(}
-              [0044, 0006] (0051,                  VAR) {var}
-              [0044, 0010] (0001,                   ID) {i}
-              [0044, 0012] (0027,               ASSIGN) {=}
-              [0044, 0014] (0030,            CONSTLINT) {0}
-              [0044, 0015] (0026,            SEPARATOR) {,}
-              [0044, 0017] (0001,                   ID) {size}
-              [0044, 0021] (0026,            SEPARATOR) {,}
-              [0044, 0023] (0030,            CONSTLINT) {1}
-              [0044, 0024] (0020,            PARAMSEND) {)}
-  45  print(list[i]);
-              [0045, 0004] (0035,                PRINT) {print}
-              [0045, 0009] (0019,          PARAMSBEGIN) {(}
-              [0045, 0010] (0001,                   ID) {list}
-              [0045, 0014] (0017,           ARRAYBEGIN) {[}
-              [0045, 0015] (0001,                   ID) {i}
-              [0045, 0016] (0018,             ARRAYEND) {]}
-              [0045, 0017] (0020,            PARAMSEND) {)}
-              [0045, 0018] (0025,              LINEEND) {;}
-  46  endfor
-              [0046, 0002] (0048,           LOOPENDFOR) {endfor}
-  47  
-  48  end
-              [0048, 0000] (0022,                FCEND) {end}
-              [0049, 0003] (0052,                  EOF) {EOF}
+              [0032, 0017] (0020,            PARAMSEND) {)}
+              [0032, 0018] (0025,              LINEEND) {;}
+  33  end
+              [0033, 0002] (0022,             BLOCKEND) {end}
+  34  list = shellsort(list, size);
+              [0034, 0002] (0001,                   ID) {list}
+              [0034, 0007] (0027,               ASSIGN) {=}
+              [0034, 0009] (0001,                   ID) {shellsort}
+              [0034, 0018] (0019,          PARAMSBEGIN) {(}
+              [0034, 0019] (0001,                   ID) {list}
+              [0034, 0023] (0026,            SEPARATOR) {,}
+              [0034, 0025] (0001,                   ID) {size}
+              [0034, 0029] (0020,            PARAMSEND) {)}
+              [0034, 0030] (0025,              LINEEND) {;}
+  35  for(var i = 0, size, 1)
+              [0035, 0002] (0045,              LOOPFOR) {for}
+              [0035, 0005] (0019,          PARAMSBEGIN) {(}
+              [0035, 0006] (0047,                  VAR) {var}
+              [0035, 0010] (0001,                   ID) {i}
+              [0035, 0012] (0027,               ASSIGN) {=}
+              [0035, 0014] (0030,            CONSTLINT) {0}
+              [0035, 0015] (0026,            SEPARATOR) {,}
+              [0035, 0017] (0001,                   ID) {size}
+              [0035, 0021] (0026,            SEPARATOR) {,}
+              [0035, 0023] (0030,            CONSTLINT) {1}
+              [0035, 0024] (0020,            PARAMSEND) {)}
+  36  begin
+              [0036, 0002] (0021,           BLOCKBEGIN) {begin}
+  37  print(list[i]);
+              [0037, 0004] (0035,                PRINT) {print}
+              [0037, 0009] (0019,          PARAMSBEGIN) {(}
+              [0037, 0010] (0001,                   ID) {list}
+              [0037, 0014] (0017,           ARRAYBEGIN) {[}
+              [0037, 0015] (0001,                   ID) {i}
+              [0037, 0016] (0018,             ARRAYEND) {]}
+              [0037, 0017] (0020,            PARAMSEND) {)}
+              [0037, 0018] (0025,              LINEEND) {;}
+  38  end
+              [0038, 0002] (0022,             BLOCKEND) {end}
+  39  return 0;
+              [0039, 0002] (0024,             FCRETURN) {return}
+              [0039, 0009] (0030,            CONSTLINT) {0}
+              [0039, 0010] (0025,              LINEEND) {;}
+  40  end
+              [0040, 0000] (0022,             BLOCKEND) {end}
+              [0041, 0004] (0051,                  EOF) {EOF}

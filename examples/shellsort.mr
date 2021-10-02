@@ -1,49 +1,41 @@
-def shellsort(var list: int[], var size: int): void
+def shellsort(var list: int[], var size: int): int[]
 begin
-  
   var gap: int = Int(size / 2);
-
   while(gap > 0)
-
+  begin
     for(var i = gap, size)
-
+    begin
       var temp: int = list[i];
       var j: int = i;
-
       while(j >= gap and list[j-gap] > temp)
+      begin
         list[j] = list[j-gap];
         j = j - gap;
-      endwhile
-
+      end
       list[j] = temp;
-
-    endfor
-
+    end
     gap = Int(gap / 2);
-
-  endwhile
-
+  end
+  return list;
 end
 
-def init(args: string[]): void
+def init(var args: string[]): int
 begin
-  
   var size: int;
   input(size);
   var list: int[];
-
   for(var i = 0, size, 1)
+  begin
     input(list[i]);
-  endfor
-
+  end
   for(var i = 0, size, 1)
+  begin
     print(list[i]);
-  endfor
-
+  end
   list = shellsort(list, size);
-
   for(var i = 0, size, 1)
+  begin
     print(list[i]);
-  endfor
-
+  end
+  return 0;
 end

@@ -1,4 +1,5 @@
-def init(args: string[]): void
+def init(var args: string[]): int
 begin
   print("Hello World");
+  return 0;
 end

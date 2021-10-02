@@ -1,23 +1,28 @@
-   0  def init(args: string[]): void
+   0  def init(var args: string[]): int
               [0000, 0000] (0023,                FCDEF) {def}
-              [0000, 0004] (0037,               FCINIT) {init}
+              [0000, 0004] (0001,                   ID) {init}
               [0000, 0008] (0019,          PARAMSBEGIN) {(}
-              [0000, 0009] (0001,                   ID) {args}
-              [0000, 0013] (0028,           TYPEASSIGN) {:}
-              [0000, 0015] (0004,           TYPESTRING) {string}
-              [0000, 0021] (0017,           ARRAYBEGIN) {[}
-              [0000, 0022] (0018,             ARRAYEND) {]}
-              [0000, 0023] (0020,            PARAMSEND) {)}
-              [0000, 0024] (0028,           TYPEASSIGN) {:}
-              [0000, 0026] (0029,           FCTYPEVOID) {void}
+              [0000, 0009] (0047,                  VAR) {var}
+              [0000, 0013] (0001,                   ID) {args}
+              [0000, 0017] (0028,           TYPEASSIGN) {:}
+              [0000, 0019] (0004,           TYPESTRING) {string}
+              [0000, 0025] (0017,           ARRAYBEGIN) {[}
+              [0000, 0026] (0018,             ARRAYEND) {]}
+              [0000, 0027] (0020,            PARAMSEND) {)}
+              [0000, 0028] (0028,           TYPEASSIGN) {:}
+              [0000, 0030] (0005,              TYPEINT) {int}
    1  begin
-              [0001, 0000] (0021,              FCBEGIN) {begin}
+              [0001, 0000] (0021,           BLOCKBEGIN) {begin}
    2  print("Hello World");
               [0002, 0002] (0035,                PRINT) {print}
               [0002, 0007] (0019,          PARAMSBEGIN) {(}
               [0002, 0008] (0031,         CONSTLSTRING) {"Hello World"}
               [0002, 0021] (0020,            PARAMSEND) {)}
               [0002, 0022] (0025,              LINEEND) {;}
-   3  end
-              [0003, 0000] (0022,                FCEND) {end}
-              [0004, 0003] (0052,                  EOF) {EOF}
+   3  return 0;
+              [0003, 0002] (0024,             FCRETURN) {return}
+              [0003, 0009] (0030,            CONSTLINT) {0}
+              [0003, 0010] (0025,              LINEEND) {;}
+   4  end
+              [0004, 0000] (0022,             BLOCKEND) {end}
+              [0005, 0004] (0051,                  EOF) {EOF}
